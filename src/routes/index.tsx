@@ -162,11 +162,9 @@ function Index() {
             <div className="relative">
               <div className="absolute -inset-4 -z-10 rounded-[2.5rem] bg-sand" aria-hidden="true" />
               <img
-                src={heroImg}
-                alt="Voluntaria de la Fundación FullDías acompañando a una mujer adulta mayor por una calle de Bello"
-                width={1600}
-                height={1104}
-                className="h-full w-full rounded-3xl object-cover shadow-[var(--shadow-lift)]"
+                src={heroAsset.url}
+                alt="Voluntaria de la Fundación FullDías entregando un mercado a una mujer adulta mayor en su casa"
+                className="aspect-[4/5] h-full w-full rounded-3xl object-cover shadow-[var(--shadow-lift)]"
               />
             </div>
           </div>
