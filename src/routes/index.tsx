@@ -145,7 +145,10 @@ function Index() {
           <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-16 md:grid-cols-2 md:py-24">
             <div>
               <p className="eyebrow">Bello · Antioquia</p>
-              <h1 className="mt-4 text-4xl leading-[1.05] sm:text-5xl md:text-6xl">
+              <p className="mt-4 font-display text-2xl text-accent sm:text-3xl">
+                “El sol volverá a brillar”
+              </p>
+              <h1 className="mt-3 text-4xl leading-[1.05] sm:text-5xl md:text-6xl">
                 Queremos llenar sus días de acompañamiento, cuidado y esperanza.
               </h1>
               <p className="mt-6 max-w-xl text-lg text-muted-foreground">
@@ -476,9 +479,12 @@ function Index() {
               loading="lazy"
               className="h-12 w-auto"
             />
-            <p className="font-display text-base text-foreground">
-              Fundación Llen@ de Días “FullDías”
-            </p>
+            <div>
+              <p className="font-display text-base text-foreground">
+                Fundación Llen@ de Días “FullDías”
+              </p>
+              <p className="font-display text-sm text-accent">“El sol volverá a brillar”</p>
+            </div>
           </div>
           <div className="space-y-1 sm:text-right">
             <p>Bello, Antioquia · Colombia</p>
