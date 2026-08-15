@@ -198,12 +198,10 @@ function Index() {
               </div>
               <figure className="self-start">
                 <img
-                  src={manosImg}
-                  alt="Manos jóvenes sosteniendo las manos de una persona adulta mayor sobre una mesa de madera"
-                  width={1200}
-                  height={912}
+                  src={hospitalAsset.url}
+                  alt="Voluntarias de FullDías acompañando a una mujer adulta mayor hospitalizada"
                   loading="lazy"
-                  className="w-full rounded-3xl object-cover shadow-[var(--shadow-soft)]"
+                  className="aspect-[4/3] w-full rounded-3xl object-cover shadow-[var(--shadow-soft)]"
                 />
                 <figcaption className="mt-4 text-sm text-muted-foreground">
                   Creemos que ninguna persona debería sentirse sola frente a sus dificultades.
