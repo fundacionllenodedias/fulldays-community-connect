@@ -123,6 +123,9 @@ function Index() {
             <a href="#acompanamos" className="hover:text-primary">
               Qué hacemos
             </a>
+            <a href="#galeria" className="hover:text-primary">
+              Galería
+            </a>
             <a href="#padrino" className="hover:text-primary">
               Plan Padrino
             </a>
