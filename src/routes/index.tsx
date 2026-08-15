@@ -1,7 +1,27 @@
 import { createFileRoute } from "@tanstack/react-router";
-import heroImg from "@/assets/hero-acompanamiento.jpg";
-import manosImg from "@/assets/manos-apoyo.jpg";
 import logoAsset from "@/assets/logo-fulldias.png.asset.json";
+import heroAsset from "@/assets/entrega-mercado.jpg.asset.json";
+import hospitalAsset from "@/assets/acompanamiento-hospital.jpg.asset.json";
+import citaAsset from "@/assets/cita-medica.jpg.asset.json";
+import tramitesAsset from "@/assets/tramites-admisiones.jpg.asset.json";
+import visualAsset from "@/assets/examen-visual.jpg.asset.json";
+import cumpleanosAsset from "@/assets/cumpleanos.jpg.asset.json";
+import grupalAsset from "@/assets/encuentro-grupal.jpg.asset.json";
+import almuerzoAsset from "@/assets/almuerzo-compartido.jpg.asset.json";
+import valiososAsset from "@/assets/somos-valiosos.jpg.asset.json";
+import hospitalarioAsset from "@/assets/acompanamiento-hospitalario.jpg.asset.json";
+
+const galeria = [
+  { src: grupalAsset.url, alt: "Encuentro grupal de adultos mayores en la sede de FullDías" },
+  { src: valiososAsset.url, alt: "Grupo de beneficiarios en la actividad “Somos valiosos”" },
+  { src: tramitesAsset.url, alt: "Adulta mayor en silla de ruedas esperando en admisiones de un centro médico" },
+  { src: citaAsset.url, alt: "Adulto mayor acompañado en su cita médica" },
+  { src: visualAsset.url, alt: "Adulto mayor durante un examen visual" },
+  { src: hospitalAsset.url, alt: "Voluntarias acompañando a una adulta mayor hospitalizada" },
+  { src: hospitalarioAsset.url, alt: "Voluntario acompañando a una persona durante su hospitalización" },
+  { src: almuerzoAsset.url, alt: "Almuerzo compartido con beneficiarios de la fundación" },
+  { src: cumpleanosAsset.url, alt: "Adulto mayor soplando la vela de su torta de cumpleaños" },
+];
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -103,6 +123,9 @@ function Index() {
             <a href="#acompanamos" className="hover:text-primary">
               Qué hacemos
             </a>
+            <a href="#galeria" className="hover:text-primary">
+              Galería
+            </a>
             <a href="#padrino" className="hover:text-primary">
               Plan Padrino
             </a>
@@ -142,11 +165,9 @@ function Index() {
             <div className="relative">
               <div className="absolute -inset-4 -z-10 rounded-[2.5rem] bg-sand" aria-hidden="true" />
               <img
-                src={heroImg}
-                alt="Voluntaria de la Fundación FullDías acompañando a una mujer adulta mayor por una calle de Bello"
-                width={1600}
-                height={1104}
-                className="h-full w-full rounded-3xl object-cover shadow-[var(--shadow-lift)]"
+                src={heroAsset.url}
+                alt="Voluntaria de la Fundación FullDías entregando un mercado a una mujer adulta mayor en su casa"
+                className="aspect-[4/5] h-full w-full rounded-3xl object-cover shadow-[var(--shadow-lift)]"
               />
             </div>
           </div>
@@ -180,12 +201,10 @@ function Index() {
               </div>
               <figure className="self-start">
                 <img
-                  src={manosImg}
-                  alt="Manos jóvenes sosteniendo las manos de una persona adulta mayor sobre una mesa de madera"
-                  width={1200}
-                  height={912}
+                  src={hospitalAsset.url}
+                  alt="Voluntarias de FullDías acompañando a una mujer adulta mayor hospitalizada"
                   loading="lazy"
-                  className="w-full rounded-3xl object-cover shadow-[var(--shadow-soft)]"
+                  className="aspect-[4/3] w-full rounded-3xl object-cover shadow-[var(--shadow-soft)]"
                 />
                 <figcaption className="mt-4 text-sm text-muted-foreground">
                   Creemos que ninguna persona debería sentirse sola frente a sus dificultades.
@@ -214,42 +233,138 @@ function Index() {
           </div>
         </section>
 
+        {/* Galería */}
+        <section id="galeria" className="bg-secondary/60 section-pad">
+          <div className="mx-auto max-w-6xl px-5">
+            <p className="eyebrow">Nuestra labor</p>
+            <h2 className="mt-3 max-w-3xl text-3xl sm:text-4xl">
+              Días acompañados en Bello, Antioquia.
+            </h2>
+            <p className="mt-4 max-w-2xl text-lg text-secondary-foreground">
+              Momentos reales de nuestro trabajo: citas médicas, trámites, visitas al hogar,
+              encuentros y celebraciones junto a los beneficiarios de la fundación.
+            </p>
+            <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {galeria.map((foto) => (
+                <figure key={foto.src} className="overflow-hidden rounded-2xl bg-card shadow-[var(--shadow-soft)]">
+                  <img
+                    src={foto.src}
+                    alt={foto.alt}
+                    loading="lazy"
+                    className="aspect-[4/3] w-full object-cover transition-transform duration-500 hover:scale-[1.04]"
+                  />
+                </figure>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Plan padrino */}
         <section id="padrino" className="bg-olive text-olive-foreground section-pad">
-          <div className="mx-auto grid max-w-6xl gap-10 px-5 md:grid-cols-[1.2fr_1fr] md:items-center">
-            <div>
+          <div className="mx-auto max-w-6xl px-5">
+            <div className="max-w-3xl">
               <p className="eyebrow !text-accent">Plan Padrino</p>
               <h2 className="mt-3 text-3xl sm:text-4xl">
                 Acompaña a un beneficiario en su proceso de superación.
               </h2>
-              <p className="mt-6 max-w-xl text-lg opacity-90">
+              <p className="mt-6 text-lg opacity-90">
                 Si te sientes identificado con el proyecto y deseas ayudar a uno de nuestros
                 beneficiarios a través de alguno de nuestros programas, puedes notificarlo para
                 convertirte en su padrino y apoyarlo en la superación de sus distintas dificultades.
               </p>
             </div>
-            <div className="surface-card bg-card p-7 text-card-foreground">
-              <h3 className="text-xl">Quiero ser padrino</h3>
-              <ol className="mt-4 space-y-3 text-sm text-muted-foreground">
-                <li>
-                  <strong className="text-foreground">1.</strong> Nos escribes y cuentas cómo
-                  quieres apoyar: tiempo, acompañamiento o aporte.
-                </li>
-                <li>
-                  <strong className="text-foreground">2.</strong> Te presentamos el caso de un
-                  beneficiario del programa que elijas.
-                </li>
-                <li>
-                  <strong className="text-foreground">3.</strong> Acompañas su proceso y recibes
-                  seguimiento de la fundación.
-                </li>
-              </ol>
-              <a
-                href="mailto:contacto@fulldias.org?subject=Quiero%20ser%20padrino%20FullD%C3%ADas"
-                className="btn-base btn-primary mt-7 w-full"
-              >
-                Notificar mi interés
-              </a>
+
+            <div className="mt-12 grid gap-5 md:grid-cols-3">
+              {[
+                {
+                  titulo: "Padrino de acompañamiento",
+                  texto:
+                    "Regalas tu tiempo: acompañas a un beneficiario a sus citas médicas, trámites o visitas en el hogar.",
+                },
+                {
+                  titulo: "Padrino de bienestar",
+                  texto:
+                    "Apoyas con un aporte mensual destinado a mercados, medicamentos, transporte o ayudas técnicas.",
+                },
+                {
+                  titulo: "Padrino aliado",
+                  texto:
+                    "Empresas, profesionales de la salud o comunidades que aportan servicios, insumos o voluntariado.",
+                },
+              ].map((op) => (
+                <article
+                  key={op.titulo}
+                  className="rounded-2xl border border-olive-foreground/20 bg-olive-foreground/5 p-7"
+                >
+                  <h3 className="text-xl">{op.titulo}</h3>
+                  <p className="mt-3 opacity-85">{op.texto}</p>
+                </article>
+              ))}
+            </div>
+
+            <div className="mt-12 grid gap-8 md:grid-cols-[1fr_1fr] md:items-start">
+              <div className="surface-card bg-card p-7 text-card-foreground">
+                <h3 className="text-xl">Cómo funciona</h3>
+                <ol className="mt-5 space-y-4 text-sm text-muted-foreground">
+                  <li>
+                    <strong className="text-foreground">1. Nos escribes.</strong> Cuentas cómo
+                    quieres apoyar: tiempo, acompañamiento o aporte.
+                  </li>
+                  <li>
+                    <strong className="text-foreground">2. Te presentamos un caso.</strong> Conoces
+                    la historia y la necesidad concreta de un beneficiario del programa que elijas.
+                  </li>
+                  <li>
+                    <strong className="text-foreground">3. Acompañas su proceso.</strong> Recibes
+                    reportes con fotos y avances de la persona que apadrinas.
+                  </li>
+                  <li>
+                    <strong className="text-foreground">4. Puedes visitarlo.</strong> Te invitamos a
+                    los encuentros y celebraciones de la fundación en Bello.
+                  </li>
+                </ol>
+                <div className="mt-7 flex flex-col gap-3">
+                  <a
+                    href="mailto:contacto@fulldias.org?subject=Quiero%20ser%20padrino%20FullD%C3%ADas&body=Hola%2C%20quiero%20ser%20padrino.%20Mi%20nombre%20es%3A%20%0AC%C3%B3mo%20quiero%20apoyar%20(tiempo%2C%20aporte%2C%20aliado)%3A%20%0ATel%C3%A9fono%20de%20contacto%3A%20"
+                    className="btn-base btn-primary w-full"
+                  >
+                    Quiero ser padrino
+                  </a>
+                  <a
+                    href="mailto:contacto@fulldias.org?subject=Quiero%20conocer%20un%20caso%20de%20FullD%C3%ADas"
+                    className="btn-base btn-outline w-full"
+                  >
+                    Primero quiero conocer un caso
+                  </a>
+                </div>
+                <p className="mt-4 text-xs text-muted-foreground">
+                  Te respondemos con la información del beneficiario y el detalle de en qué se usa
+                  cada aporte.
+                </p>
+              </div>
+
+              <div className="space-y-5">
+                <figure className="overflow-hidden rounded-2xl">
+                  <img
+                    src={heroAsset.url}
+                    alt="Voluntaria de FullDías entregando un mercado a una beneficiaria en su casa"
+                    loading="lazy"
+                    className="aspect-[4/3] w-full object-cover"
+                  />
+                </figure>
+                <blockquote className="rounded-2xl border border-olive-foreground/20 p-6 font-display text-xl leading-snug">
+                  “Cada padrino se convierte en la familia que puede estar presente el día de la
+                  cita, del trámite o del cumpleaños.”
+                </blockquote>
+                <ul className="grid gap-3 text-sm opacity-90 sm:grid-cols-2">
+                  <li className="rounded-xl bg-olive-foreground/5 px-4 py-3">
+                    Sin intermediarios: el apoyo llega directo al beneficiario.
+                  </li>
+                  <li className="rounded-xl bg-olive-foreground/5 px-4 py-3">
+                    Puedes apadrinar por un mes, un proceso o de forma continua.
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </section>
