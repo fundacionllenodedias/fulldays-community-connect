@@ -230,6 +230,32 @@ function Index() {
           </div>
         </section>
 
+        {/* Galería */}
+        <section id="galeria" className="bg-secondary/60 section-pad">
+          <div className="mx-auto max-w-6xl px-5">
+            <p className="eyebrow">Nuestra labor</p>
+            <h2 className="mt-3 max-w-3xl text-3xl sm:text-4xl">
+              Días acompañados en Bello, Antioquia.
+            </h2>
+            <p className="mt-4 max-w-2xl text-lg text-secondary-foreground">
+              Momentos reales de nuestro trabajo: citas médicas, trámites, visitas al hogar,
+              encuentros y celebraciones junto a los beneficiarios de la fundación.
+            </p>
+            <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {galeria.map((foto) => (
+                <figure key={foto.src} className="overflow-hidden rounded-2xl bg-card shadow-[var(--shadow-soft)]">
+                  <img
+                    src={foto.src}
+                    alt={foto.alt}
+                    loading="lazy"
+                    className="aspect-[4/3] w-full object-cover transition-transform duration-500 hover:scale-[1.04]"
+                  />
+                </figure>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Plan padrino */}
         <section id="padrino" className="bg-olive text-olive-foreground section-pad">
           <div className="mx-auto grid max-w-6xl gap-10 px-5 md:grid-cols-[1.2fr_1fr] md:items-center">
