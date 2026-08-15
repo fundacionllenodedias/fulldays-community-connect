@@ -450,10 +450,12 @@ function Index() {
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <a
-                href="mailto:contacto@fulldias.org?subject=Quiero%20apoyar%20a%20FullD%C3%ADas"
+                href="https://wa.me/573104997504?text=Hola%2C%20quiero%20apoyar%20a%20FullD%C3%ADas"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn-base btn-primary"
               >
-                Quiero apoyar
+                Escríbenos por WhatsApp
               </a>
               <a href="#acompanamos" className="btn-base btn-outline">
                 Ver programas
@@ -478,7 +480,17 @@ function Index() {
               Fundación Llen@ de Días “FullDías”
             </p>
           </div>
-          <p>Bello, Antioquia · Colombia</p>
+          <div className="space-y-1 sm:text-right">
+            <p>Bello, Antioquia · Colombia</p>
+            <p>
+              <a className="underline" href="https://wa.me/573104997504">WhatsApp 310 499 7504</a>
+              {" · "}
+              <a className="underline" href="mailto:fundacionllenodedias@gmail.com">
+                fundacionllenodedias@gmail.com
+              </a>
+            </p>
+            <p>Aportes por Nequi: 310 499 7504</p>
+          </div>
         </div>
       </footer>
     </div>
