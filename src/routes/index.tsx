@@ -261,40 +261,110 @@ function Index() {
 
         {/* Plan padrino */}
         <section id="padrino" className="bg-olive text-olive-foreground section-pad">
-          <div className="mx-auto grid max-w-6xl gap-10 px-5 md:grid-cols-[1.2fr_1fr] md:items-center">
-            <div>
+          <div className="mx-auto max-w-6xl px-5">
+            <div className="max-w-3xl">
               <p className="eyebrow !text-accent">Plan Padrino</p>
               <h2 className="mt-3 text-3xl sm:text-4xl">
                 Acompaña a un beneficiario en su proceso de superación.
               </h2>
-              <p className="mt-6 max-w-xl text-lg opacity-90">
+              <p className="mt-6 text-lg opacity-90">
                 Si te sientes identificado con el proyecto y deseas ayudar a uno de nuestros
                 beneficiarios a través de alguno de nuestros programas, puedes notificarlo para
                 convertirte en su padrino y apoyarlo en la superación de sus distintas dificultades.
               </p>
             </div>
-            <div className="surface-card bg-card p-7 text-card-foreground">
-              <h3 className="text-xl">Quiero ser padrino</h3>
-              <ol className="mt-4 space-y-3 text-sm text-muted-foreground">
-                <li>
-                  <strong className="text-foreground">1.</strong> Nos escribes y cuentas cómo
-                  quieres apoyar: tiempo, acompañamiento o aporte.
-                </li>
-                <li>
-                  <strong className="text-foreground">2.</strong> Te presentamos el caso de un
-                  beneficiario del programa que elijas.
-                </li>
-                <li>
-                  <strong className="text-foreground">3.</strong> Acompañas su proceso y recibes
-                  seguimiento de la fundación.
-                </li>
-              </ol>
-              <a
-                href="mailto:contacto@fulldias.org?subject=Quiero%20ser%20padrino%20FullD%C3%ADas"
-                className="btn-base btn-primary mt-7 w-full"
-              >
-                Notificar mi interés
-              </a>
+
+            <div className="mt-12 grid gap-5 md:grid-cols-3">
+              {[
+                {
+                  titulo: "Padrino de acompañamiento",
+                  texto:
+                    "Regalas tu tiempo: acompañas a un beneficiario a sus citas médicas, trámites o visitas en el hogar.",
+                },
+                {
+                  titulo: "Padrino de bienestar",
+                  texto:
+                    "Apoyas con un aporte mensual destinado a mercados, medicamentos, transporte o ayudas técnicas.",
+                },
+                {
+                  titulo: "Padrino aliado",
+                  texto:
+                    "Empresas, profesionales de la salud o comunidades que aportan servicios, insumos o voluntariado.",
+                },
+              ].map((op) => (
+                <article
+                  key={op.titulo}
+                  className="rounded-2xl border border-olive-foreground/20 bg-olive-foreground/5 p-7"
+                >
+                  <h3 className="text-xl">{op.titulo}</h3>
+                  <p className="mt-3 opacity-85">{op.texto}</p>
+                </article>
+              ))}
+            </div>
+
+            <div className="mt-12 grid gap-8 md:grid-cols-[1fr_1fr] md:items-start">
+              <div className="surface-card bg-card p-7 text-card-foreground">
+                <h3 className="text-xl">Cómo funciona</h3>
+                <ol className="mt-5 space-y-4 text-sm text-muted-foreground">
+                  <li>
+                    <strong className="text-foreground">1. Nos escribes.</strong> Cuentas cómo
+                    quieres apoyar: tiempo, acompañamiento o aporte.
+                  </li>
+                  <li>
+                    <strong className="text-foreground">2. Te presentamos un caso.</strong> Conoces
+                    la historia y la necesidad concreta de un beneficiario del programa que elijas.
+                  </li>
+                  <li>
+                    <strong className="text-foreground">3. Acompañas su proceso.</strong> Recibes
+                    reportes con fotos y avances de la persona que apadrinas.
+                  </li>
+                  <li>
+                    <strong className="text-foreground">4. Puedes visitarlo.</strong> Te invitamos a
+                    los encuentros y celebraciones de la fundación en Bello.
+                  </li>
+                </ol>
+                <div className="mt-7 flex flex-col gap-3">
+                  <a
+                    href="mailto:contacto@fulldias.org?subject=Quiero%20ser%20padrino%20FullD%C3%ADas&body=Hola%2C%20quiero%20ser%20padrino.%20Mi%20nombre%20es%3A%20%0AC%C3%B3mo%20quiero%20apoyar%20(tiempo%2C%20aporte%2C%20aliado)%3A%20%0ATel%C3%A9fono%20de%20contacto%3A%20"
+                    className="btn-base btn-primary w-full"
+                  >
+                    Quiero ser padrino
+                  </a>
+                  <a
+                    href="mailto:contacto@fulldias.org?subject=Quiero%20conocer%20un%20caso%20de%20FullD%C3%ADas"
+                    className="btn-base btn-outline w-full"
+                  >
+                    Primero quiero conocer un caso
+                  </a>
+                </div>
+                <p className="mt-4 text-xs text-muted-foreground">
+                  Te respondemos con la información del beneficiario y el detalle de en qué se usa
+                  cada aporte.
+                </p>
+              </div>
+
+              <div className="space-y-5">
+                <figure className="overflow-hidden rounded-2xl">
+                  <img
+                    src={heroAsset.url}
+                    alt="Voluntaria de FullDías entregando un mercado a una beneficiaria en su casa"
+                    loading="lazy"
+                    className="aspect-[4/3] w-full object-cover"
+                  />
+                </figure>
+                <blockquote className="rounded-2xl border border-olive-foreground/20 p-6 font-display text-xl leading-snug">
+                  “Cada padrino se convierte en la familia que puede estar presente el día de la
+                  cita, del trámite o del cumpleaños.”
+                </blockquote>
+                <ul className="grid gap-3 text-sm opacity-90 sm:grid-cols-2">
+                  <li className="rounded-xl bg-olive-foreground/5 px-4 py-3">
+                    Sin intermediarios: el apoyo llega directo al beneficiario.
+                  </li>
+                  <li className="rounded-xl bg-olive-foreground/5 px-4 py-3">
+                    Puedes apadrinar por un mes, un proceso o de forma continua.
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </section>
