@@ -79,14 +79,7 @@
   --olive-foreground: oklch(0.97 0.015 95);
 }
 
-  --ring: oklch(0.53 0.144 41);
-  --sand: oklch(0.93 0.035 86);
-  --sand-foreground: oklch(0.3 0.04 50);
-  --clay: oklch(0.53 0.144 41);
-  --clay-foreground: oklch(0.985 0.012 84);
-  --olive: oklch(0.34 0.055 137);
-  --olive-foreground: oklch(0.96 0.02 100);
-}
+
 
 @layer base {
   * {
