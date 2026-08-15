@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import heroImg from "@/assets/hero-acompanamiento.jpg";
 import manosImg from "@/assets/manos-apoyo.jpg";
+import logoAsset from "@/assets/logo-fulldias.png.asset.json";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -86,11 +87,14 @@ function Index() {
     <div className="min-h-screen bg-background">
       <header className="sticky top-0 z-50 border-b border-border bg-background/85 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
-          <a href="#inicio" className="flex items-baseline gap-2">
-            <span className="font-display text-xl font-bold text-primary">FullDías</span>
-            <span className="hidden text-xs tracking-widest text-muted-foreground sm:inline">
-              LLEN@ DE DÍAS
-            </span>
+          <a href="#inicio" className="flex items-center gap-3">
+            <img
+              src={logoAsset.url}
+              alt="Logo Fundación FullDías, Llen@ de Días"
+              width={583}
+              height={410}
+              className="h-11 w-auto"
+            />
           </a>
           <nav className="hidden items-center gap-7 text-sm font-medium md:flex">
             <a href="#problematica" className="hover:text-primary">
@@ -324,9 +328,19 @@ function Index() {
 
       <footer className="border-t border-border py-10">
         <div className="mx-auto flex max-w-6xl flex-col gap-2 px-5 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
-          <p className="font-display text-base text-foreground">
-            Fundación Llen@ de Días “FullDías”
-          </p>
+          <div className="flex items-center gap-3">
+            <img
+              src={logoAsset.url}
+              alt="Logo Fundación FullDías"
+              width={583}
+              height={410}
+              loading="lazy"
+              className="h-12 w-auto"
+            />
+            <p className="font-display text-base text-foreground">
+              Fundación Llen@ de Días “FullDías”
+            </p>
+          </div>
           <p>Bello, Antioquia · Colombia</p>
         </div>
       </footer>
