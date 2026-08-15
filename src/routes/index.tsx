@@ -325,17 +325,39 @@ function Index() {
                 </ol>
                 <div className="mt-7 flex flex-col gap-3">
                   <a
-                    href="mailto:contacto@fulldias.org?subject=Quiero%20ser%20padrino%20FullD%C3%ADas&body=Hola%2C%20quiero%20ser%20padrino.%20Mi%20nombre%20es%3A%20%0AC%C3%B3mo%20quiero%20apoyar%20(tiempo%2C%20aporte%2C%20aliado)%3A%20%0ATel%C3%A9fono%20de%20contacto%3A%20"
+                    href="https://wa.me/573104997504?text=Hola%2C%20quiero%20ser%20padrino%20de%20FullD%C3%ADas.%20Mi%20nombre%20es%3A%20"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="btn-base btn-primary w-full"
                   >
-                    Quiero ser padrino
+                    Quiero ser padrino por WhatsApp
                   </a>
                   <a
-                    href="mailto:contacto@fulldias.org?subject=Quiero%20conocer%20un%20caso%20de%20FullD%C3%ADas"
+                    href="mailto:fundacionllenodedias@gmail.com?subject=Quiero%20conocer%20un%20caso%20de%20FullD%C3%ADas"
                     className="btn-base btn-outline w-full"
                   >
                     Primero quiero conocer un caso
                   </a>
+                </div>
+                <div className="mt-5 space-y-1 text-sm text-muted-foreground">
+                  <p>
+                    WhatsApp:{" "}
+                    <a className="text-foreground underline" href="https://wa.me/573104997504">
+                      310 499 7504
+                    </a>
+                  </p>
+                  <p>
+                    Correo:{" "}
+                    <a
+                      className="text-foreground underline"
+                      href="mailto:fundacionllenodedias@gmail.com"
+                    >
+                      fundacionllenodedias@gmail.com
+                    </a>
+                  </p>
+                  <p>
+                    Aportes por <strong className="text-foreground">Nequi: 310 499 7504</strong>
+                  </p>
                 </div>
                 <p className="mt-4 text-xs text-muted-foreground">
                   Te respondemos con la información del beneficiario y el detalle de en qué se usa
@@ -428,10 +450,12 @@ function Index() {
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <a
-                href="mailto:contacto@fulldias.org?subject=Quiero%20apoyar%20a%20FullD%C3%ADas"
+                href="https://wa.me/573104997504?text=Hola%2C%20quiero%20apoyar%20a%20FullD%C3%ADas"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn-base btn-primary"
               >
-                Quiero apoyar
+                Escríbenos por WhatsApp
               </a>
               <a href="#acompanamos" className="btn-base btn-outline">
                 Ver programas
@@ -456,7 +480,17 @@ function Index() {
               Fundación Llen@ de Días “FullDías”
             </p>
           </div>
-          <p>Bello, Antioquia · Colombia</p>
+          <div className="space-y-1 sm:text-right">
+            <p>Bello, Antioquia · Colombia</p>
+            <p>
+              <a className="underline" href="https://wa.me/573104997504">WhatsApp 310 499 7504</a>
+              {" · "}
+              <a className="underline" href="mailto:fundacionllenodedias@gmail.com">
+                fundacionllenodedias@gmail.com
+              </a>
+            </p>
+            <p>Aportes por Nequi: 310 499 7504</p>
+          </div>
         </div>
       </footer>
     </div>
