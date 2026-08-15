@@ -1,24 +1,335 @@
 import { createFileRoute } from "@tanstack/react-router";
+import heroImg from "@/assets/hero-acompanamiento.jpg";
+import manosImg from "@/assets/manos-apoyo.jpg";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
   component: Index,
+  head: () => ({
+    meta: [
+      { title: "Fundación FullDías | Llen@ de Días — Bello, Antioquia" },
+      {
+        name: "description",
+        content:
+          "Acompañamos a adultos mayores, personas con discapacidad y familias vulnerables de Bello, Antioquia: citas médicas, trámites y una red humana. Conoce el Plan Padrino.",
+      },
+      { property: "og:title", content: "Fundación FullDías | Llen@ de Días" },
+      {
+        property: "og:description",
+        content:
+          "Ninguna persona debería sentirse sola frente a sus dificultades. Llenamos los días de acompañamiento, cuidado y esperanza.",
+      },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "/" },
+    ],
+    links: [{ rel: "canonical", href: "/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "NGO",
+          name: 'Fundación Llen@ de Días "FullDías"',
+          description:
+            "Promover, difundir y apoyar la atención básica de la población más vulnerable del Municipio de Bello, Antioquia.",
+          areaServed: "Bello, Antioquia, Colombia",
+        }),
+      },
+    ],
+  }),
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
+const valores = [
+  {
+    nombre: "Amor",
+    texto: "Consiste en amar al otro como a mí mismo.",
+  },
+  {
+    nombre: "Honestidad",
+    texto: "Integridad en el servicio que muestra respeto hacia los demás.",
+  },
+  {
+    nombre: "Lealtad",
+    texto: "Respeto y fidelidad hacia las personas beneficiarias de la fundación.",
+  },
+  {
+    nombre: "Responsabilidad",
+    texto:
+      "Cumplimiento con las tareas asignadas que busquen satisfacer a la población vulnerable.",
+  },
+];
+
+const acompanamos = [
+  {
+    titulo: "Acompañamiento médico",
+    texto:
+      "Vamos con la persona a su cita, esperamos con ella y ayudamos a entender las indicaciones del médico.",
+  },
+  {
+    titulo: "Apoyo en trámites",
+    texto:
+      "Diligencias, autorizaciones, filas y papeleo que muchas veces se vuelven una barrera imposible.",
+  },
+  {
+    titulo: "Presencia y escucha",
+    texto:
+      "Visitas y compañía en el hogar para quienes pasan la mayor parte del día en soledad.",
+  },
+  {
+    titulo: "Bienestar integral",
+    texto:
+      "Apoyo en las áreas psicosocial, física y espiritual, junto a la familia y la comunidad.",
+  },
+];
+
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen bg-background">
+      <header className="sticky top-0 z-50 border-b border-border bg-background/85 backdrop-blur">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
+          <a href="#inicio" className="flex items-baseline gap-2">
+            <span className="font-display text-xl font-bold text-primary">FullDías</span>
+            <span className="hidden text-xs tracking-widest text-muted-foreground sm:inline">
+              LLEN@ DE DÍAS
+            </span>
+          </a>
+          <nav className="hidden items-center gap-7 text-sm font-medium md:flex">
+            <a href="#problematica" className="hover:text-primary">
+              Problemática
+            </a>
+            <a href="#acompanamos" className="hover:text-primary">
+              Qué hacemos
+            </a>
+            <a href="#padrino" className="hover:text-primary">
+              Plan Padrino
+            </a>
+            <a href="#fundacion" className="hover:text-primary">
+              La fundación
+            </a>
+          </nav>
+          <a href="#padrino" className="btn-base btn-primary !px-5 !py-2.5 !text-sm">
+            Ser padrino
+          </a>
+        </div>
+      </header>
+
+      <main id="inicio">
+        {/* Hero */}
+        <section className="relative overflow-hidden">
+          <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-16 md:grid-cols-2 md:py-24">
+            <div>
+              <p className="eyebrow">Bello · Antioquia</p>
+              <h1 className="mt-4 text-4xl leading-[1.05] sm:text-5xl md:text-6xl">
+                Queremos llenar sus días de acompañamiento, cuidado y esperanza.
+              </h1>
+              <p className="mt-6 max-w-xl text-lg text-muted-foreground">
+                Somos la Fundación Llen@ de Días “FullDías”. Acompañamos a personas adultas
+                mayores, personas con discapacidad y familias en situación de vulnerabilidad
+                cuando su familia no puede estar presente.
+              </p>
+              <div className="mt-9 flex flex-wrap gap-3">
+                <a href="#padrino" className="btn-base btn-primary">
+                  Quiero ser padrino
+                </a>
+                <a href="#acompanamos" className="btn-base btn-outline">
+                  Conocer los programas
+                </a>
+              </div>
+            </div>
+            <div className="relative">
+              <div className="absolute -inset-4 -z-10 rounded-[2.5rem] bg-sand" aria-hidden="true" />
+              <img
+                src={heroImg}
+                alt="Voluntaria de la Fundación FullDías acompañando a una mujer adulta mayor por una calle de Bello"
+                width={1600}
+                height={1104}
+                className="h-full w-full rounded-3xl object-cover shadow-[var(--shadow-lift)]"
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* Problemática */}
+        <section id="problematica" className="bg-secondary/60 section-pad">
+          <div className="mx-auto max-w-6xl px-5">
+            <p className="eyebrow">La problemática</p>
+            <h2 className="mt-3 max-w-3xl text-3xl sm:text-4xl">
+              Nadie debería enfrentar solo un día difícil.
+            </h2>
+            <div className="mt-10 grid gap-10 md:grid-cols-2">
+              <div className="space-y-5 text-lg leading-relaxed text-secondary-foreground">
+                <p>
+                  Hemos identificado que muchas personas adultas mayores, personas con
+                  discapacidad y familias en situación de vulnerabilidad enfrentan dificultades
+                  para acceder a servicios médicos, realizar trámites y contar con el
+                  acompañamiento que necesitan en su día a día.
+                </p>
+                <p>
+                  En muchos casos, aunque cuentan con un familiar, este debe trabajar durante gran
+                  parte del día para sostener su hogar, pagar el arriendo y cubrir sus necesidades
+                  básicas. Así, no siempre puede acompañarlos a una cita médica, ayudarlos con un
+                  trámite o estar presente cuando más lo necesitan.
+                </p>
+                <p className="font-display text-2xl leading-snug text-primary">
+                  Ante esta realidad nace la labor de FullDías: brindar acompañamiento, apoyo y una
+                  red humana que mejore la calidad de vida de quienes atraviesan estas situaciones.
+                </p>
+              </div>
+              <figure className="self-start">
+                <img
+                  src={manosImg}
+                  alt="Manos jóvenes sosteniendo las manos de una persona adulta mayor sobre una mesa de madera"
+                  width={1200}
+                  height={912}
+                  loading="lazy"
+                  className="w-full rounded-3xl object-cover shadow-[var(--shadow-soft)]"
+                />
+                <figcaption className="mt-4 text-sm text-muted-foreground">
+                  Creemos que ninguna persona debería sentirse sola frente a sus dificultades.
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
+
+        {/* Qué hacemos */}
+        <section id="acompanamos" className="section-pad">
+          <div className="mx-auto max-w-6xl px-5">
+            <p className="eyebrow">Nuestros programas</p>
+            <h2 className="mt-3 text-3xl sm:text-4xl">Cómo acompañamos</h2>
+            <div className="mt-10 grid gap-5 sm:grid-cols-2">
+              {acompanamos.map((item, i) => (
+                <article key={item.titulo} className="surface-card p-7">
+                  <span className="font-display text-3xl text-accent">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <h3 className="mt-3 text-xl">{item.titulo}</h3>
+                  <p className="mt-2 text-muted-foreground">{item.texto}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Plan padrino */}
+        <section id="padrino" className="bg-olive text-olive-foreground section-pad">
+          <div className="mx-auto grid max-w-6xl gap-10 px-5 md:grid-cols-[1.2fr_1fr] md:items-center">
+            <div>
+              <p className="eyebrow !text-accent">Plan Padrino</p>
+              <h2 className="mt-3 text-3xl sm:text-4xl">
+                Acompaña a un beneficiario en su proceso de superación.
+              </h2>
+              <p className="mt-6 max-w-xl text-lg opacity-90">
+                Si te sientes identificado con el proyecto y deseas ayudar a uno de nuestros
+                beneficiarios a través de alguno de nuestros programas, puedes notificarlo para
+                convertirte en su padrino y apoyarlo en la superación de sus distintas dificultades.
+              </p>
+            </div>
+            <div className="surface-card bg-card p-7 text-card-foreground">
+              <h3 className="text-xl">Quiero ser padrino</h3>
+              <ol className="mt-4 space-y-3 text-sm text-muted-foreground">
+                <li>
+                  <strong className="text-foreground">1.</strong> Nos escribes y cuentas cómo
+                  quieres apoyar: tiempo, acompañamiento o aporte.
+                </li>
+                <li>
+                  <strong className="text-foreground">2.</strong> Te presentamos el caso de un
+                  beneficiario del programa que elijas.
+                </li>
+                <li>
+                  <strong className="text-foreground">3.</strong> Acompañas su proceso y recibes
+                  seguimiento de la fundación.
+                </li>
+              </ol>
+              <a
+                href="mailto:contacto@fulldias.org?subject=Quiero%20ser%20padrino%20FullD%C3%ADas"
+                className="btn-base btn-primary mt-7 w-full"
+              >
+                Notificar mi interés
+              </a>
+            </div>
+          </div>
+        </section>
+
+        {/* La fundación */}
+        <section id="fundacion" className="section-pad">
+          <div className="mx-auto max-w-6xl px-5">
+            <p className="eyebrow">La fundación</p>
+            <h2 className="mt-3 text-3xl sm:text-4xl">Quiénes somos</h2>
+
+            <div className="mt-10 grid gap-5 md:grid-cols-3">
+              <article className="surface-card p-7">
+                <h3 className="text-lg">Objeto social</h3>
+                <p className="mt-3 text-muted-foreground">
+                  Promover, difundir y apoyar la atención básica de la población más vulnerable del
+                  Municipio de Bello, Antioquia, mediante espacios y programas que contribuyan al
+                  desarrollo de una vida digna en su entorno social y familiar.
+                </p>
+              </article>
+              <article className="surface-card p-7">
+                <h3 className="text-lg">Misión</h3>
+                <p className="mt-3 text-muted-foreground">
+                  Somos la Fundación Llen@ de Días “FullDías”, que se interesa por el bienestar de
+                  la población en situación de vulnerabilidad en las áreas psicosocial, física y
+                  espiritual.
+                </p>
+              </article>
+              <article className="surface-card p-7">
+                <h3 className="text-lg">Visión</h3>
+                <p className="mt-3 text-muted-foreground">
+                  Para el año 2027 queremos haber alcanzado en el municipio de Bello la mayor
+                  cantidad de habitantes en situación de vulnerabilidad, integrando familia,
+                  sociedad y entes gubernamentales, quienes en la medida de sus capacidades apoyarán
+                  el desarrollo del objeto de la fundación.
+                </p>
+              </article>
+            </div>
+
+            <div className="mt-14">
+              <h3 className="text-2xl">Valores corporativos</h3>
+              <dl className="mt-6 grid gap-x-8 gap-y-6 sm:grid-cols-2">
+                {valores.map((v) => (
+                  <div key={v.nombre} className="border-l-2 border-accent pl-5">
+                    <dt className="font-display text-xl">{v.nombre}</dt>
+                    <dd className="mt-1 text-muted-foreground">{v.texto}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA final */}
+        <section className="bg-sand section-pad">
+          <div className="mx-auto max-w-3xl px-5 text-center">
+            <h2 className="text-3xl sm:text-4xl">
+              En FullDías queremos llenar sus días de esperanza.
+            </h2>
+            <p className="mt-5 text-lg text-sand-foreground">
+              Puedes ser voluntario, padrino o aliado. Cada día acompañado es un día más digno.
+            </p>
+            <div className="mt-8 flex flex-wrap justify-center gap-3">
+              <a
+                href="mailto:contacto@fulldias.org?subject=Quiero%20apoyar%20a%20FullD%C3%ADas"
+                className="btn-base btn-primary"
+              >
+                Quiero apoyar
+              </a>
+              <a href="#acompanamos" className="btn-base btn-outline">
+                Ver programas
+              </a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer className="border-t border-border py-10">
+        <div className="mx-auto flex max-w-6xl flex-col gap-2 px-5 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
+          <p className="font-display text-base text-foreground">
+            Fundación Llen@ de Días “FullDías”
+          </p>
+          <p>Bello, Antioquia · Colombia</p>
+        </div>
+      </footer>
     </div>
   );
 }
