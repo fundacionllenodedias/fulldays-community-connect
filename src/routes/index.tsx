@@ -1,7 +1,27 @@
 import { createFileRoute } from "@tanstack/react-router";
-import heroImg from "@/assets/hero-acompanamiento.jpg";
-import manosImg from "@/assets/manos-apoyo.jpg";
 import logoAsset from "@/assets/logo-fulldias.png.asset.json";
+import heroAsset from "@/assets/entrega-mercado.jpg.asset.json";
+import hospitalAsset from "@/assets/acompanamiento-hospital.jpg.asset.json";
+import citaAsset from "@/assets/cita-medica.jpg.asset.json";
+import tramitesAsset from "@/assets/tramites-admisiones.jpg.asset.json";
+import visualAsset from "@/assets/examen-visual.jpg.asset.json";
+import cumpleanosAsset from "@/assets/cumpleanos.jpg.asset.json";
+import grupalAsset from "@/assets/encuentro-grupal.jpg.asset.json";
+import almuerzoAsset from "@/assets/almuerzo-compartido.jpg.asset.json";
+import valiososAsset from "@/assets/somos-valiosos.jpg.asset.json";
+import hospitalarioAsset from "@/assets/acompanamiento-hospitalario.jpg.asset.json";
+
+const galeria = [
+  { src: grupalAsset.url, alt: "Encuentro grupal de adultos mayores en la sede de FullDías" },
+  { src: valiososAsset.url, alt: "Grupo de beneficiarios en la actividad “Somos valiosos”" },
+  { src: tramitesAsset.url, alt: "Adulta mayor en silla de ruedas esperando en admisiones de un centro médico" },
+  { src: citaAsset.url, alt: "Adulto mayor acompañado en su cita médica" },
+  { src: visualAsset.url, alt: "Adulto mayor durante un examen visual" },
+  { src: hospitalAsset.url, alt: "Voluntarias acompañando a una adulta mayor hospitalizada" },
+  { src: hospitalarioAsset.url, alt: "Voluntario acompañando a una persona durante su hospitalización" },
+  { src: almuerzoAsset.url, alt: "Almuerzo compartido con beneficiarios de la fundación" },
+  { src: cumpleanosAsset.url, alt: "Adulto mayor soplando la vela de su torta de cumpleaños" },
+];
 
 export const Route = createFileRoute("/")({
   component: Index,
