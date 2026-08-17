@@ -115,7 +115,14 @@ function Index() {
               height={410}
               className="h-11 w-auto"
             />
+            <span className="leading-tight text-primary">
+              <span className="block font-display text-sm font-semibold tracking-wide sm:text-base">
+                FUNDACIÓN LLEN@ DE DÍAS
+              </span>
+              <span className="block text-[0.7rem] opacity-80 sm:text-xs">Nit 901887017</span>
+            </span>
           </a>
+
           <nav className="hidden items-center gap-7 text-sm font-medium md:flex">
             <a href="#problematica" className="hover:text-primary">
               Problemática
