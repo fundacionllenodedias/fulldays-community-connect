@@ -127,6 +127,9 @@ function Index() {
             <a href="#problematica" className="hover:text-primary">
               Problemática
             </a>
+            <a href="#fundacion" className="hover:text-primary">
+              La fundación
+            </a>
             <a href="#acompanamos" className="hover:text-primary">
               Qué hacemos
             </a>
@@ -135,9 +138,6 @@ function Index() {
             </a>
             <a href="#padrino" className="hover:text-primary">
               Plan Padrino
-            </a>
-            <a href="#fundacion" className="hover:text-primary">
-              La fundación
             </a>
           </nav>
           <a href="#padrino" className="btn-base btn-primary !px-5 !py-2.5 !text-sm">
