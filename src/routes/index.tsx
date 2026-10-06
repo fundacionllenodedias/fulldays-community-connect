@@ -146,8 +146,7 @@ function Index() {
         </div>
       </header>
 
-      <main id="inicio">
-        {/* Hero */}
+      {/* Hero */}
         <section className="relative overflow-hidden">
           <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-16 md:grid-cols-2 md:py-24">
             <div>
@@ -220,6 +219,54 @@ function Index() {
                   Creemos que ninguna persona debería sentirse sola frente a sus dificultades.
                 </figcaption>
               </figure>
+            </div>
+          </div>
+        </section>
+
+        {/* La fundación */}
+        <section id="fundacion" className="section-pad">
+          <div className="mx-auto max-w-6xl px-5">
+            <p className="eyebrow">La fundación</p>
+            <h2 className="mt-3 text-3xl sm:text-4xl">Quiénes somos</h2>
+
+            <div className="mt-10 grid gap-5 md:grid-cols-3">
+              <article className="surface-card p-7">
+                <h3 className="text-lg">Objeto social</h3>
+                <p className="mt-3 text-muted-foreground">
+                  Promover, difundir y apoyar la atención básica de la población más vulnerable del
+                  Municipio de Bello, Antioquia, mediante espacios y programas que contribuyan al
+                  desarrollo de una vida digna en su entorno social y familiar.
+                </p>
+              </article>
+              <article className="surface-card p-7">
+                <h3 className="text-lg">Misión</h3>
+                <p className="mt-3 text-muted-foreground">
+                  Somos la Fundación Llen@ de Días “FullDías”, que se interesa por el bienestar de
+                  la población en situación de vulnerabilidad en las áreas psicosocial, física y
+                  espiritual.
+                </p>
+              </article>
+              <article className="surface-card p-7">
+                <h3 className="text-lg">Visión</h3>
+                <p className="mt-3 text-muted-foreground">
+                  Para el año 2027 queremos haber alcanzado en el municipio de Bello la mayor
+                  cantidad de habitantes en situación de vulnerabilidad, integrando familia,
+                  sociedad y entes gubernamentales, quienes en la medida de sus capacidades apoyarán
+                  el desarrollo del objeto de la fundación.
+                </p>
+              </article>
+            </div>
+
+            <div className="mt-14">
+              <h3 className="text-2xl">Valores corporativos</h3>
+              <dl className="mt-6 grid gap-x-8 gap-y-6 sm:grid-cols-2">
+                {valores.map((v) => (
+                  <div key={v.nombre} className="border-l-2 border-accent pl-5">
+                    <dt className="font-display text-xl">{v.nombre}</dt>
+                    <dd className="mt-1 text-muted-foreground">{v.texto}</dd>
+                  </div>
+                ))}
+              </dl>
             </div>
           </div>
         </section>
@@ -397,54 +444,6 @@ function Index() {
                   </li>
                 </ul>
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* La fundación */}
-        <section id="fundacion" className="section-pad">
-          <div className="mx-auto max-w-6xl px-5">
-            <p className="eyebrow">La fundación</p>
-            <h2 className="mt-3 text-3xl sm:text-4xl">Quiénes somos</h2>
-
-            <div className="mt-10 grid gap-5 md:grid-cols-3">
-              <article className="surface-card p-7">
-                <h3 className="text-lg">Objeto social</h3>
-                <p className="mt-3 text-muted-foreground">
-                  Promover, difundir y apoyar la atención básica de la población más vulnerable del
-                  Municipio de Bello, Antioquia, mediante espacios y programas que contribuyan al
-                  desarrollo de una vida digna en su entorno social y familiar.
-                </p>
-              </article>
-              <article className="surface-card p-7">
-                <h3 className="text-lg">Misión</h3>
-                <p className="mt-3 text-muted-foreground">
-                  Somos la Fundación Llen@ de Días “FullDías”, que se interesa por el bienestar de
-                  la población en situación de vulnerabilidad en las áreas psicosocial, física y
-                  espiritual.
-                </p>
-              </article>
-              <article className="surface-card p-7">
-                <h3 className="text-lg">Visión</h3>
-                <p className="mt-3 text-muted-foreground">
-                  Para el año 2027 queremos haber alcanzado en el municipio de Bello la mayor
-                  cantidad de habitantes en situación de vulnerabilidad, integrando familia,
-                  sociedad y entes gubernamentales, quienes en la medida de sus capacidades apoyarán
-                  el desarrollo del objeto de la fundación.
-                </p>
-              </article>
-            </div>
-
-            <div className="mt-14">
-              <h3 className="text-2xl">Valores corporativos</h3>
-              <dl className="mt-6 grid gap-x-8 gap-y-6 sm:grid-cols-2">
-                {valores.map((v) => (
-                  <div key={v.nombre} className="border-l-2 border-accent pl-5">
-                    <dt className="font-display text-xl">{v.nombre}</dt>
-                    <dd className="mt-1 text-muted-foreground">{v.texto}</dd>
-                  </div>
-                ))}
-              </dl>
             </div>
           </div>
         </section>
